@@ -1,7 +1,12 @@
 [build]
-  command   = "cd packages/client && npm run build"
-  functions = "packages/client/out_functions"
-  publish   = "packages/client/out_publish"
+  command   = "npm run build"
+  publish   = "/build"
+  base = "/"
+
+  [[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
 
 [dev]
   functions = "packages/client/out_functions"
